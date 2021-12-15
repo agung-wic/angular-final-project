@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold fst-italic" routerLinkn="">Payment App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" *ngIf="!isLogIn">
+            <button class="btn btn-outline-primary me-3" routerLink="login">Login</button>
+            <button class="btn btn-outline-primary" routerLink="register">Register</button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="isLogIn">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="home">Home</a>
+                </li>
+            </ul>
+            <button class="btn btn-outline-primary me-3" (click)="logout()">Logout</button>
+        </div>
+    </div>
+</nav>

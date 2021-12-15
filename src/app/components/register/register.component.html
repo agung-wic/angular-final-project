@@ -1,0 +1,20 @@
+<!-- <p>register works</p> -->
+<div class="container my-5">
+    <div class="card my-5 px-5 py-3 m-auto rounded shadow" style="width: 36rem;">
+        <form class="m-2" [formGroup]="registerForm" (ngSubmit)="registUser()">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" formControlName="username">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" formControlName="email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" formControlName="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+</div>

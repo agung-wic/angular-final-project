@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <h3 class="text-center mt-3">Payment List</h3>
+    <div class="row justify-content-end">
+        <button class="btn btn-primary col-md-2" (click)="add()">Add New Payment</button>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="card shadow">
+            <table class="table">
+                <thead class="card-title">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Card Owner Name</th>
+                        <th scope="col">Card Number</th>
+                        <th scope="col">Expiration Date</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="card-body">
+                    <tr *ngFor="let payment of payments; let i = index;">
+                        <td>{{ i+1 }}</td>
+                        <td>{{ payment.cardOwnerName }}</td>
+                        <td>{{ payment.cardNumber }}</td>
+                        <td>{{ payment.expirationDate }}</td>
+                        <td>
+                            <button class="btn btn-warning mx-2" (click)="toEdit(payment.id)">Edit</button>
+                            <button class="btn btn-danger" (click)="confirmDelete(payment.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

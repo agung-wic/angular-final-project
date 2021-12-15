@@ -1,0 +1,47 @@
+<div class="container">
+    <h4 class="text-center mt-5">Create New Payment</h4>
+    <div class="card my-5 px-5 py-3 m-auto rounded shadow" style="width: 36rem;">
+        <form [formGroup]="addForm" (ngSubmit)="addPayment()">
+            <div class="form-group row mb-2 justify-content-center">
+                <label for="card-owner" class="col-md-4 col-form-label">Card Owner</label>
+                <div class="col-md-8">
+                    <input formControlName="cardOwnerName" type="text" class="form-control" id="card-owner">
+                </div>
+                <span style="color: red;" *ngIf="cardOwnerName && cardOwnerName.touched && cardOwnerName.invalid">
+                    Card Owner Name is required. 
+                </span>
+            </div>
+            <div class="form-group row mb-2 justify-content-center">
+                <label for="cardNumber" class="col-md-4 col-form-label">Card Number</label>
+                <div class="col-md-8">
+                    <input formControlName="cardNumber" type="text" class="form-control" id="cardNumber">
+                </div>
+                <span style="color: red;" *ngIf="cardNumber && cardNumber.touched && cardNumber.invalid">
+                    Card Number is required. 
+                </span>
+            </div>
+            <div class="form-group row mb-2 justify-content-center">
+                <label for="expired-date" class="col-md-4 col-form-label ">Expired Date</label>
+                <div class="col-md-8">
+                    <input formControlName="expirationDate" type="date" data-date-format="DD-MMMM-YYYY" class="form-control" id="expired-date">
+                </div>
+                <span style="color: red;" *ngIf="expirationDate && expirationDate.touched && expirationDate.invalid">
+                    Expired Date is required. 
+                </span>
+            </div>
+            <div class="form-group row mb-2 justify-content-center">
+                <label for="security-code" class="col-md-4 col-form-label">Security Code</label>
+                <div class="col-md-8">
+                    <input formControlName="securityCode" type="password" class="form-control" id="security-code">
+                </div>
+                <span style="color: red;" *ngIf="securityCode && securityCode.touched && securityCode.invalid">
+                    Security Code is required. 
+                </span>
+            </div>
+            <div class="row justify-content-between mt-3">
+                <button class="btn btn-danger col-md-2" routerLink="/home">Cancel</button>
+                <button type="submit" class="btn btn-primary col-md-2" [disabled]="addForm.invalid">Add</button>
+            </div>
+        </form>
+    </div>
+</div>

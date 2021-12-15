@@ -1,0 +1,53 @@
+<div class="container">
+    <h4 class="mt-3 text-center">Edit Payment Data</h4>
+    <div class="card my-3 px-5 py-3 m-auto rounded shadow" style="width: 36rem;">
+        <form [formGroup]="editForm" (ngSubmit)="updatePayment(paymentEdit.id)">
+            <div class="form-group row mb-2 justify-content-center">
+                <label for="id" class="col-md-4 col-form-label">Id</label>
+                <div class="col-md-8">
+                    <input formControlName="id" type="number" class="form-control" id="id" value="{{paymentEdit.id}}" readonly>
+                </div>
+            </div>
+            <div class="form-group row mb-2 justify-content-center">
+                <label for="cardOwnerName" class="col-md-4 col-form-label">Card Owner Name</label>
+                <div class="col-md-8">
+                    <input formControlName="cardOwnerName" type="text" class="form-control" id="cardOwnerName" value="{{paymentEdit.cardOwnerName}}">
+                </div>
+                <span style="color: red;" *ngIf="cardOwnerName && cardOwnerName.touched && cardOwnerName.invalid">
+                    Card Owner Name is required. 
+                </span>
+            </div>
+            <div class="form-group row mb-2 justify-content-center">
+                <label for="cardNumber" class="col-md-4 col-form-label">Card Number</label>
+                <div class="col-md-8">
+                    <input formControlName="cardNumber" type="text" class="form-control" id="cardNumber" value="{{paymentEdit.cardNumber}}">
+                </div>
+                <span style="color: red;" *ngIf="cardNumber && cardNumber.touched && cardNumber.invalid">
+                    Card Number is required. 
+                </span>
+            </div>
+            <div class="form-group row mb-2 justify-content-center">
+                <label for="expirationDate" class="col-md-4 col-form-label ">Expiration Date</label>
+                <div class="col-md-8">
+                    <input formControlName="expirationDate" type="date" data-date-format="DD-MMMM-YYYY" class="form-control" id="expirationDate" value="{{paymentEdit.expirationDate}}">
+                </div>
+                <span style="color: red;" *ngIf="expirationDate && expirationDate.touched && expirationDate.invalid">
+                    Expired Date is required. 
+                </span>
+            </div>
+            <div class="form-group row mb-2 justify-content-center">
+                <label for="securityCode" class="col-md-4 col-form-label">Security Code</label>
+                <div class="col-md-8">
+                    <input formControlName="securityCode" type="password" class="form-control" id="securityCode" value="{{paymentEdit.securityCode}}">
+                </div>
+                <span style="color: red;" *ngIf="securityCode && securityCode.touched && securityCode.invalid">
+                    Security Code is required. 
+                </span>
+            </div>
+            <div class="row justify-content-between mt-3">
+                <button class="btn btn-danger col-md-2" routerLink="/home">Cancel</button>
+                <button type="submit" class="btn btn-warning col-md-2" [disabled]="editForm.invalid">Edit</button>
+            </div>
+        </form>
+    </div>
+</div>
