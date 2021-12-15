@@ -8,7 +8,7 @@ import { HandleError } from '../helper/handleError.helper';
   providedIn: 'root'
 })
 export class AuthService {
-  endPoint: string = 'http://paymentweb-api.herokuapp.com/api/authmanagement';
+  endPoint: string = 'https://paymentweb-api.herokuapp.com/api/authmanagement';
 
   constructor(private http: HttpClient) { }
 

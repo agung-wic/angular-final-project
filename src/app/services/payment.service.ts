@@ -9,7 +9,7 @@ import { HandleError } from '../helper/handleError.helper';
 })
 export class PaymentService {
 
-  endpoint: string = 'http://paymentweb-api.herokuapp.com/api/paymentdetail'
+  endpoint: string = 'https://paymentweb-api.herokuapp.com/api/paymentdetail'
 
   constructor(private http: HttpClient) { }
 
